@@ -24,13 +24,33 @@
   <li>Third Item</li>
   <li>Fourth Item</li>
 </ul>
-<div class="">
-  <img
-    src="https://images.unsplash.com/photo-1506452305024-9d3f02d1c9b5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-    alt="Foggy Mountain">
-
-</div>
-
+<form action="http://www.google.com" method="get">
+  <label for="emailtag">Enter email:</label>
+  <input id="emailtag" type="email" name="useremail" placeholder="Email Here">
+  <br>
+  <label for="pass">Enter Password:</label>
+  <input id="pass" type="password" name="password" placeholder="password">
+  <br>
+  <br>
+  <h3>Do you already own a dog?</h3>
+  <label for="yes">Yes:</label>
+  <input type="radio" name="dog_choice" id="yes" value="yes">
+  <label for="no">No:</label>
+  <input type="radio" name="dog_choice" id="no" value="no">
+  <p>How clean is your pet? (1-5)</p>
+  <select name="stars">
+    <option value="Great">5</option>
+    <option value="Good">4</option>
+    <option value="Okay">3</option>
+    <option value="Bad">2</option>
+    <option value="Worst">1</option>
+  </select>
+  <p>Any other comments?</p>
+  <textarea name="name" id="" cols="30" rows="4"></textarea>
+  <br>
+  <br>
+  <input type="submit" value="Submit" name="Submit">
+</form>
 
 </body>
 
