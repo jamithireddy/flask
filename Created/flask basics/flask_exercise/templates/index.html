@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+  <div class="bg-secondary p-5">
+    <h1>Create your username</h1>
+    <form action="{{url_for('report')}}">
+      <label for="username">Enter the username:</label>
+      <input type="text" name="username">
+      <input type="submit" value="Submit Form">
+    </form>
+  </div>
+</div>
+{% endblock %}
