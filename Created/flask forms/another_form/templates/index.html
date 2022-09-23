@@ -1,0 +1,15 @@
+<h1>Personal information form</h1>
+<form method="POST">
+  {{form.hidden_tag()}}
+  {{form.name.label}}{{form.name}}
+  <br>
+  {{form.email.label}}{{form.email}}
+  <br>
+  {{form.enrolled.label}}{{form.enrolled}}
+  <br>
+  {{form.education.label}}{{form.education}}
+  <br>
+  {{form.diet.label}}{{form.diet}}
+  <br>
+  {{form.submit()}}
+</form>
