@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+  <div class="bg-secondary p-5">
+    <h1>Your details are as below</h1>
+  </div>
+  <ul>
+    <li>Scrips selected: {{session['scrips']}}</li>
+    <li>Start Date: {{session['stdt']}}</li>
+    <li>End Date: {{session['eddt']}}</li>
+    <li>Education: {{session['education']}}</li>
+    <li>Food Choice: {{session['diet']}}</li>
+  </ul>
+</div>
+{% endblock %}

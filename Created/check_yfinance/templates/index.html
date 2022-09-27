@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+  <div class="bg-secondary p-5">
+    <h1>Enter the following details</h1>
+  </div>
+  <form method="POST">
+    {{form.hidden_tag()}}
+    {{form.scrips.label}}{{form.scrips}}
+    <br>
+    {{form.stdt.label}}{{form.stdt}}
+    <br>
+    {{form.eddt.label}}{{form.eddt}}
+    <br>
+    {{form.education.label}}{{form.education}}
+    <br>
+    {{form.diet.label}}{{form.diet}}
+    <br>
+    {{form.submit()}}
+  </form>
+</div>
+{% endblock %}
