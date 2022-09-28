@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="container">
-  <div class="bg-secondary p-5">
+  <div class="bg-secondary p-2">
     <h1>Your details are as below</h1>
   </div>
   <ul>
@@ -9,7 +9,23 @@
     <li>Start Date: {{session['stdt']}}</li>
     <li>End Date: {{session['eddt']}}</li>
     <li>Education: {{session['education']}}</li>
-    <li>Food Choice: {{session['diet']}}</li>
   </ul>
 </div>
+
+  <table class="table table-striped">
+    <tr>
+      {% for header in header_list %}
+      <th>{{header}}</th>
+      {% endfor %}
+    </tr>
+    {% for row in stock_data %}
+    <tr>
+      {% for cell in row %}
+      <td>{{cell}}</td>
+
+      {% endfor %}
+    </tr>
+    {% endfor %}
+  </table>
+
 {% endblock %}
