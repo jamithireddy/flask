@@ -27,8 +27,8 @@ class stockinfo(FlaskForm):
 def checkfunc(stocks, stdt, eddt):
     price_data = yf.download(stocks, start=stdt, end=eddt)
     price_data = price_data.loc[:, 'Adj Close']
-    stock = price_data.columns
-    stock_returns = price_data[stock].pct_change().dropna()
+    price_data.columns = stocks
+    stock_returns = price_data[stocks].pct_change().dropna()
     return stock_returns
 
 
@@ -51,9 +51,9 @@ def index():
         stock_weights.weights.astype(str)
         stock_weights = stock_weights.round(2)
         stock_weights.reset_index(inplace=True)
-        stock_weights.weights.astype(str)
-        stock_weights.columns = ['Stock', 'Weights(%)']
-        stock_weights = stock_weights.round(2)
+        # df2 = df.loc[(df != 0).all(axis=1), :]
+        stock_weights = stock_weights.loc[(stock_weights != 0).all(axis=1), :]
+        stock_weights.columns = ['Stocks', 'Weights(%)']
         stock_weights = pd.DataFrame(stock_weights)
         header_list = list(stock_weights.columns.values)
         stock_data = stock_weights.values

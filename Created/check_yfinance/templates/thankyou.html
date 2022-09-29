@@ -13,20 +13,20 @@
     <li>Objective function selected: {{session['obj']}}</li>
   </ul>
 </div>
-<table class="table table-striped">
-  <tr>
-    {% for header in header_list %}
-    <th>{{header}}</th>
+<div class="container">
+  <table class="table table-striped">
+    <tr>
+      {% for header in header_list %}
+      <th>{{header}}</th>
+      {% endfor %}
+    </tr>
+    {% for row in stock_data %}
+    <tr>
+      {% for cell in row %}
+      <td>{{cell}}</td>
+      {% endfor %}
+    </tr>
     {% endfor %}
-  </tr>
-  {% for row in stock_data %}
-  <tr>
-    {% for cell in row %}
-    <td>{{cell}}</td>
-
-    {% endfor %}
-  </tr>
-  {% endfor %}
-</table>
-
+  </table>
+</div>
 {% endblock %}

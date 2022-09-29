@@ -10,21 +10,13 @@ def checkfunc(stocks, stdt, eddt):
     stock_returns = price_data[stocks].pct_change().dropna()
     return stock_returns
 
-
-stocks = ['AAPL', 'TSLA', 'MSFT']
+stocks = ['TCS.NS', 'EASEMYTRIP.NS', 'AAVAS.NS', 'ABBOTINDIA.NS', 'DIXON.NS', 'BHARTIARTL.NS', 'SUNPHARMA.NS', 'WHIRLPOOL.NS', 'UBL.NS', 'INDIGO.NS', 'INDUSINDBK.NS', 'ICICIBANK.NS', 'ABFRL.NS', 'MARUTI.NS', 'EICHERMOT.NS',
+          'ITC.NS', 'VGUARD.NS', 'PHOENIXLTD.BO', 'CONCOR.NS', 'ASHOKLEY.NS', 'JUBLFOOD.NS', 'AIAENG.NS', 'CUMMINSIND.NS', 'GODREJCP.NS', 'HDFCBANK.NS', 'TRENT.NS', 'SBIN.NS', 'CUB.NS', 'TVSMOTOR.NS', 'KAJARIACER.NS']
 stdt = '2021-04-01'
-eddt = '2022-03-31'
+eddt = '2022-09-28'
 
 
 xyz = checkfunc(stocks, stdt, eddt)
-my_portfolio = rp.Portfolio(returns=xyz)
-my_portfolio.assets_stats(method_mu='hist', method_cov='hist', d=0.94)
-stock_weights = my_portfolio.optimization(
-    model='Classic', rm='MV', obj='Sharpe', hist=True)*100
-stock_weights.reset_index(inplace=True)
-stock_weights.weights.astype(str)
-stock_weights.columns = ['Stock', 'Weights(%)']
-stock_weights = stock_weights.round(2)
-stock_weights = pd.DataFrame(stock_weights)
-heade
-print(stock_weights)
+
+xyz.to_csv('/Users/rjamithireddy/Desktop/stocks.csv')
+ 
