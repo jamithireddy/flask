@@ -1,4 +1,6 @@
 import yfinance as yf
+import riskfolio as rp
+import pandas as pd
 
 
 def checkfunc(stocks, stdt, eddt):
@@ -15,4 +17,14 @@ eddt = '2022-03-31'
 
 
 xyz = checkfunc(stocks, stdt, eddt)
-xyz.shape
+my_portfolio = rp.Portfolio(returns=xyz)
+my_portfolio.assets_stats(method_mu='hist', method_cov='hist', d=0.94)
+stock_weights = my_portfolio.optimization(
+    model='Classic', rm='MV', obj='Sharpe', hist=True)*100
+stock_weights.reset_index(inplace=True)
+stock_weights.weights.astype(str)
+stock_weights.columns = ['Stock', 'Weights(%)']
+stock_weights = stock_weights.round(2)
+stock_weights = pd.DataFrame(stock_weights)
+heade
+print(stock_weights)

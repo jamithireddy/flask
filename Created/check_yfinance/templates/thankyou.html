@@ -8,24 +8,25 @@
     <li>Scrips selected: {{session['scrips']}}</li>
     <li>Start Date: {{session['stdt']}}</li>
     <li>End Date: {{session['eddt']}}</li>
-    <li>Education: {{session['education']}}</li>
+    <li>Model Selected: {{session['model']}}</li>
+    <li>Risk Model selected: {{session['rm']}}</li>
+    <li>Objective function selected: {{session['obj']}}</li>
   </ul>
 </div>
-
-  <table class="table table-striped">
-    <tr>
-      {% for header in header_list %}
-      <th>{{header}}</th>
-      {% endfor %}
-    </tr>
-    {% for row in stock_data %}
-    <tr>
-      {% for cell in row %}
-      <td>{{cell}}</td>
-
-      {% endfor %}
-    </tr>
+<table class="table table-striped">
+  <tr>
+    {% for header in header_list %}
+    <th>{{header}}</th>
     {% endfor %}
-  </table>
+  </tr>
+  {% for row in stock_data %}
+  <tr>
+    {% for cell in row %}
+    <td>{{cell}}</td>
+
+    {% endfor %}
+  </tr>
+  {% endfor %}
+</table>
 
 {% endblock %}
